@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Obrigado · Salmo 121 no Coração</title>
+<script>window.__S121Q=location.search;if(location.search)history.replaceState(null,"",location.pathname);</script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#FBF6EC;color:#1D3445;font-family:Montserrat,system-ui,sans-serif;font-size:17px;line-height:1.55}
+.w{max-width:560px;margin:0 auto;padding:0 20px}.hero{background:#1D3445;color:#fff;padding:36px 0;text-align:center}
+h1,h2{font-family:'Playfair Display',Georgia,serif;line-height:1.2}h1{font-size:30px;margin:0 0 10px}h2{color:#2E6E7E;font-size:23px}
+.brand{color:#B8892E;font-weight:700;letter-spacing:.12em;font-size:12px;text-transform:uppercase}
+.card{background:#fff;border-radius:14px;padding:18px;margin:18px 0;border-top:5px solid #2E6E7E}
+a.btn{display:block;text-align:center;margin:12px 0;padding:16px;border-radius:12px;background:#B8892E;color:#fff;text-decoration:none;font-weight:700}
+a.ig{background:#2E6E7E}.muted{color:#6b7a84;font-size:14px}</style>
+<!-- META PIXEL (mesmo código do Desenvolvimento) -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1822550828886577');fbq('track','PageView');</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "z5wbxiagww");
+</script>
+</head><body>
+<div class="hero"><div class="w"><div class="brand">Bíblia no Coração</div><h1>Obrigado! Comece agora pelo Dia 2</h1>
+<p style="color:#dfe8ea;margin:0">Abra o PDF no Dia 2 e siga um versículo por dia. Se ainda não fez o Dia 0 e o Dia 1, comece por eles.</p></div></div>
+<div class="w">
+<div class="card"><h2 style="margin-top:0">Seu material</h2><div id="box" data-clarity-mask="true"><p>Confirmando seu pagamento…</p></div>
+<p class="muted">Os links do PDF e da música também foram enviados para o seu e-mail. Se não aparecer em alguns minutos, olhe a caixa de spam ou promoções.</p></div>
+<div class="card"><h2 style="margin-top:0">Próximo desafio</h2><p>Siga e fale com a gente no Instagram para escolher juntos o seu próximo capítulo.</p>
+<a class="btn ig" href="https://www.instagram.com/abnerferreiragonzales/">Seguir @abnerferreiragonzales</a></div>
+</div>
+<script>
+const API = "https://salmo121.abnergonzales64.workers.dev"; // preencher
+const q = new URLSearchParams(window.__S121Q||"");
+const box = document.getElementById("box");
+let tries = 0;
+async function check(){
+  const p = new URLSearchParams({order_nsu:q.get("order_nsu")||"",transaction_nsu:q.get("transaction_nsu")||"",slug:q.get("slug")||""});
+  if(q.get("receipt_url")) p.set("receipt_url", q.get("receipt_url"));
+  try{
+    const r = await fetch(API+"/status?"+p); const d = await r.json();
+    if(d.paid){
+      box.innerHTML = '<p>Seus arquivos estão prontos:</p>'+
+        '<a class="btn" href="'+d.pdf+'">Baixar o PDF</a><a class="btn" href="'+d.mp3+'">Baixar a música (MP3)</a>';
+      const k = "s121_purchase_"+d.event_id;
+      if(!localStorage.getItem(k)){ fbq('track','Purchase',{value:d.value,currency:d.currency},{eventID:d.event_id}); localStorage.setItem(k,"1"); }
+      history.replaceState(null,"",location.pathname); // tira os parâmetros da barra
+      return;
+    }
+  }catch(e){}
+  if(++tries < 10) setTimeout(check, 3000);
+  else box.innerHTML = '<p>Ainda não recebemos a confirmação. Se você já pagou, os links chegam no seu e-mail em alguns minutos.</p>';
+}
+if(q.get("order_nsu")) check(); else box.innerHTML = '<p>Pedido não encontrado.</p>';
+</script>
+</body></html>
