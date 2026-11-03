@@ -36,6 +36,7 @@ details{background:#fff;border-radius:10px;padding:14px;margin:10px 0}summary{fo
 #compra input{width:100%;padding:14px;margin:6px 0;border:1px solid #cdbf9f;border-radius:10px;font-size:16px}#compra button{width:100%;border:0;cursor:pointer;font-family:inherit}
 .fixo{position:fixed;left:12px;right:12px;bottom:12px;margin:0;z-index:9;box-shadow:0 6px 20px rgba(0,0,0,.25);transform:translateY(150%);transition:transform .3s}.fixo.on{transform:none}
 @media(min-width:760px){.fixo{display:none}}
+.wa{position:fixed;right:14px;bottom:86px;z-index:10;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.25)}.wa svg{width:30px;height:30px}.wa .tag{position:absolute;right:62px;top:50%;transform:translateY(-50%);background:#fff;color:#128C7E;font-size:13px;font-weight:700;white-space:nowrap;padding:5px 10px;border-radius:999px;box-shadow:0 3px 10px rgba(0,0,0,.2);text-decoration:none}@media(min-width:760px){.wa{bottom:20px}}
 .imag{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 6px}.imag div{background:rgba(255,255,255,.08);border:1px solid rgba(227,199,126,.5);border-radius:14px;padding:14px;text-align:center}
 .imag svg{width:56px;height:56px;display:block;margin:0 auto 6px}.imag b{color:var(--gold2);display:block;font-size:15px;letter-spacing:.06em}.imag p{margin:4px 0 0;font-size:14px;color:#dfe8ea;line-height:1.4}
 @media(max-width:560px){.imag{grid-template-columns:1fr}}
@@ -47,18 +48,18 @@ details{background:#fff;border-radius:10px;padding:14px;margin:10px 0}summary{fo
 <section class="hero" id="topo"><div class="w">
 <div class="brand">Bíblia no Coração</div>
 <h1>Guarde o Salmo 121 no coração em 9 dias, cantando</h1>
+<div class="player" id="dia0"><p>🎵 Salmo 121 (ARA) · ouça aqui na página</p>
+<audio id="musica" controls controlsList="nodownload noplaybackrate" preload="metadata" oncontextmenu="return false;"><source src="salmo121-trecho.mp3" type="audio/mpeg"></audio></div>
+<a class="btn" href="#oferta" data-comprar>Quero o kit · R$ 14,90</a>
 <p class="sub">Uma música com o texto da ARA e um versículo por dia, em uns 15 minutos. Dê o play: é com esta música que você começa hoje, de graça.</p>
+<!-- VIDEO_ABNER_RECITANDO: reservado para um vídeo de ~20s do Abner recitando o Salmo 121 de cor (quando gravado). Pronto para usar:
+<video src="" controls playsinline preload="metadata" controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;" style="width:100%;border-radius:12px"></video>
+-->
+<p class="aviso">Este material foi feito para abençoar vidas. A música é para ouvir aqui na página. Ao adquirir o kit, você também abençoa este ministério e ajuda a levar a Palavra a mais pessoas. Pedimos que não grave nem compartilhe o áudio. Confiamos na sua honestidade diante do Senhor.</p>
 <div class="imag" aria-label="Imagine-se">
 <div><svg viewBox="0 0 56 56" fill="none" stroke="#E3C77E" stroke-width="2.5" stroke-linecap="round"><rect x="14" y="10" width="24" height="32" rx="2"/><path d="M19 18h14M19 24h14M19 30h9"/><path d="M42 14v14a4 4 0 1 1-3-3.8"/></svg><b>IMAGINE-SE NO DIA 1</b><p>Ouvindo a música e lendo o versículo 1 pela primeira vez, ainda com o papel na mão.</p></div>
 <div><svg viewBox="0 0 56 56" fill="none" stroke="#E3C77E" stroke-width="2.5" stroke-linecap="round"><circle cx="28" cy="22" r="11"/><path d="M23 22l4 4 7-8"/><path d="M21 32l-4 14 7-4 4 6 4-6 7 4-4-14"/></svg><b>IMAGINE-SE NO DIA 9</b><p>Recitando o Salmo 121 inteiro de cor, sem olhar, e recebendo o seu certificado.</p></div>
 </div>
-<!-- VIDEO_ABNER_RECITANDO: reservado para um vídeo de ~20s do Abner recitando o Salmo 121 de cor (quando gravado). Pronto para usar:
-<video src="" controls playsinline preload="metadata" controlsList="nodownload" disablePictureInPicture oncontextmenu="return false;" style="width:100%;border-radius:12px"></video>
--->
-<div class="player" id="dia0"><p>🎵 Salmo 121 (ARA) · ouça aqui na página</p>
-<audio id="musica" controls controlsList="nodownload noplaybackrate" preload="metadata" oncontextmenu="return false;"><source src="salmo121-trecho.mp3" type="audio/mpeg"></audio></div>
-<a class="btn" href="#oferta" data-comprar>Quero o kit · R$ 14,90</a>
-<p class="aviso">Este material foi feito para abençoar vidas. A música é para ouvir aqui na página. Ao adquirir o kit, você também abençoa este ministério e ajuda a levar a Palavra a mais pessoas. Pedimos que não grave nem compartilhe o áudio. Confiamos na sua honestidade diante do Senhor.</p>
 </div></section>
 
 <section><div class="w"><h2>Comece agora, grátis</h2>
@@ -101,6 +102,8 @@ details{background:#fff;border-radius:10px;padding:14px;margin:10px 0}summary{fo
 <p>Sou Abner Gonzales, seminarista e missionário há mais de 10 anos, da Igreja da Morada, em Teresina-PI. Memorizei o livro de Jonas inteiro e hoje estou memorizando Romanos. Este é o mesmo método que eu uso, versículo por versículo.</p></div></section>
 <footer>Bíblia no Coração · Abner Gonzales</footer>
 <a class="btn fixo" id="fixo" href="#oferta">Quero o kit · R$ 14,90</a>
+<a class="wa" id="whats" href="https://wa.me/5586981444991?text=Ol%C3%A1%2C%20Abner%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Salmo%20121%20cantando." target="_blank" rel="noopener" aria-label="Dúvidas? Fale comigo pelo WhatsApp (abre em nova aba)"><svg viewBox="0 0 32 32" aria-hidden="true" fill="#fff"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5l-.6-.4z"/></svg><span class="tag" aria-hidden="true">Saiba mais</span></a>
+<script>document.getElementById('whats').addEventListener('click',function(){if(typeof fbq==='function')fbq('trackCustom','WhatsAppClick');if(typeof clarity==='function')clarity('event','whatsapp_click')});</script>
 <script>
 (function(){
 document.querySelectorAll('audio,video').forEach(a=>a.addEventListener('contextmenu',e=>e.preventDefault()));
@@ -131,6 +134,45 @@ var fx=$('fixo'),top=$('topo'),of=$('oferta'),pt=false,ov=false;
 function upd(){fx.classList.toggle('on',pt&&!ov)}
 new IntersectionObserver(function(e){pt=!e[0].isIntersecting;upd()}).observe(top);
 new IntersectionObserver(function(e){ov=e[0].isIntersecting;upd()}).observe(of);
+})();
+</script>
+<style>
+#xs{position:fixed;inset:0;z-index:50;background:rgba(15,25,40,.6);display:none;align-items:center;justify-content:center;padding:16px}#xs.on{display:flex}
+#xs .bx{position:relative;background:#fbf7ee;color:#1f2d3d;border-radius:16px;max-width:380px;width:100%;padding:24px 18px 18px;box-shadow:0 12px 40px rgba(0,0,0,.35);border:2px solid var(--gold2,#E3C77E)}
+#xs h2{margin:0 26px 14px 0;font-size:21px;line-height:1.3}#xs .x{position:absolute;top:8px;right:8px;width:40px;height:40px;border:0;background:none;font-size:26px;cursor:pointer;color:#1f2d3d}
+#xs .op{display:block;width:100%;margin:8px 0;padding:13px;border:1px solid #cdbf9f;border-radius:10px;background:#fff;font:inherit;font-size:16px;font-weight:600;color:#1f2d3d;cursor:pointer;text-align:center;text-decoration:none;box-sizing:border-box}
+#xs .mini{display:block;text-align:center;margin-top:12px;font-size:14px;color:#8a6d2f;font-weight:700}#xs .btn{margin-top:14px}#xs .ty p{font-size:17px;margin:0}
+</style>
+<div id="xs" aria-hidden="true"><div class="bx" role="dialog" aria-modal="true" aria-labelledby="xs-t" tabindex="-1">
+<button type="button" class="x" aria-label="Fechar">×</button>
+<div class="q"><h2 id="xs-t">Antes de ir, o que faltou para você? 🙏</h2>
+<button type="button" class="op" data-r="caro">Achei caro</button>
+<button type="button" class="op" data-r="ouvir_mais">Quero ouvir mais antes</button>
+<button type="button" class="op" data-r="nao_agora">Não é para mim agora</button>
+<a class="op" data-r="duvida" id="xs-wa" target="_blank" rel="noopener">Tenho uma dúvida</a>
+<a href="#oferta" class="mini xs-k">Quero o kit · R$ 14,90</a></div>
+<div class="ty" hidden><h2 id="xs-t2">Obrigado! Isso nos ajuda a melhorar. 💛</h2><a class="btn xs-k" href="#oferta">Quero o kit · R$ 14,90</a></div>
+</div></div>
+<script>
+(function(){var K='s121_exit',ov=document.getElementById('xs'),bx=ov.querySelector('.bx'),last=null,seen=false;
+function st(){try{return localStorage.getItem(K)||sessionStorage.getItem(K)}catch(e){return null}}
+function mark(v){try{localStorage.setItem(K,v);sessionStorage.setItem(K,v)}catch(e){}}
+function ev(c,f,p){if(typeof clarity==='function')clarity('event',c);if(typeof fbq==='function')p?fbq('trackCustom',f,p):fbq('trackCustom',f)}
+document.getElementById('xs-wa').href=document.getElementById('whats').href;
+document.addEventListener('click',function(e){if(e.target.closest('[data-comprar],#fixo,#whats,#compra'))mark('engajou')},true);
+document.getElementById('compra').addEventListener('focusin',function(){mark('engajou')});
+function show(){if(seen||st()||ov.classList.contains('on'))return;seen=true;mark('mostrado');last=document.activeElement;ov.classList.add('on');ov.setAttribute('aria-hidden','false');bx.focus();ev('exit_popup_shown','ExitPopupShown')}
+function hide(){ov.classList.remove('on');ov.setAttribute('aria-hidden','true');if(last&&last.focus)last.focus()}
+window.__xsShow=show;
+ov.querySelector('.x').onclick=hide;ov.addEventListener('click',function(e){if(e.target===ov)hide()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('on'))hide()});
+ov.querySelectorAll('.op').forEach(function(b){b.addEventListener('click',function(){var r=b.dataset.r;ev('exit_'+r,'ExitSurvey',{resposta:r});if(r==='duvida'){hide();return}ov.querySelector('.q').hidden=true;ov.querySelector('.ty').hidden=false;bx.setAttribute('aria-labelledby','xs-t2');bx.focus()})});
+ov.querySelectorAll('.xs-k').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();hide();document.getElementById('oferta').scrollIntoView({behavior:'smooth'})})});
+var t0=Date.now(),pl=document.getElementById('dia0'),past=false,hist=[],lastAct=Date.now();
+addEventListener('scroll',function(){var y=scrollY,n=Date.now();lastAct=n;if(pl.getBoundingClientRect().bottom<0)past=true;hist.push([n,y]);hist=hist.filter(function(h){return n-h[0]<=400});if(past&&matchMedia('(max-width:759px)').matches){var mx=Math.max.apply(null,hist.map(function(h){return h[1]}));if(mx-y>300)show()}},{passive:true});
+['touchstart','pointerdown','keydown'].forEach(function(t){addEventListener(t,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){var n=Date.now();if(matchMedia('(max-width:759px)').matches&&n-t0>=8000&&n-lastAct>=25000)show()},1000);
+document.addEventListener('mouseout',function(e){if(!e.relatedTarget&&e.clientY<=0&&matchMedia('(min-width:760px)').matches)show()});
 })();
 </script>
 </body></html>
