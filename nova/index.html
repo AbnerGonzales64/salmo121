@@ -41,6 +41,7 @@ details{background:#fff;border-radius:10px;padding:14px;margin:10px 0}summary{fo
 .imag svg{width:56px;height:56px;display:block;margin:0 auto 6px}.imag b{color:var(--gold2);display:block;font-size:15px;letter-spacing:.06em}.imag p{margin:4px 0 0;font-size:14px;color:#dfe8ea;line-height:1.4}
 @media(max-width:560px){.imag{grid-template-columns:1fr}}
 .ofertatopo{background:#fff;color:var(--navy);border-radius:14px;padding:14px 16px;margin:6px 0 14px;border:2px solid var(--gold2)}.ot-t{font-weight:700;margin:0 0 4px;font-size:16px}.kit-topo li{padding:4px 0 4px 26px;font-size:15px}.ot-p{margin:6px 0 10px;max-width:175px;font-size:16px}.ot-p b{font-size:22px}.ot-g{margin:8px 0 0;font-size:13px;text-align:center}.ofertatopo .btn{margin:0}
+body{padding-bottom:84px}.wa{transition:bottom .3s}body:not(.fx-on) .wa{bottom:16px}
 </style><script type="text/javascript">
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "z5wbxiagww");
 clarity("set","versao","oferta-topo");
@@ -108,7 +109,7 @@ clarity("set","versao","oferta-topo");
 <p>Sou Abner Gonzales, seminarista e missionário há mais de 10 anos, da Igreja da Morada, em Teresina-PI. Memorizei o livro de Jonas inteiro e hoje estou memorizando Romanos. Este é o mesmo método que eu uso, versículo por versículo.</p></div></section>
 <footer>Bíblia no Coração · Abner Gonzales</footer>
 <a class="btn fixo" id="fixo" href="#oferta">Quero o kit · R$ 14,90</a>
-<a class="wa" id="whats" href="https://wa.me/5586981444991?text=Ol%C3%A1%2C%20Abner%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Salmo%20121%20cantando." target="_blank" rel="noopener" aria-label="Dúvidas? Fale comigo pelo WhatsApp (abre em nova aba)"><svg viewBox="0 0 32 32" aria-hidden="true" fill="#fff"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5l-.6-.4z"/></svg><span class="tag" aria-hidden="true">Saiba mais</span></a>
+<a class="wa" id="whats" href="https://wa.me/5586981444991?text=Ol%C3%A1%2C%20Abner%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Salmo%20121%20cantando." target="_blank" rel="noopener" aria-label="Dúvidas? Fale comigo pelo WhatsApp (abre em nova aba)" title="Fale comigo pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" fill="#fff"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5l-.6-.4z"/></svg></a>
 <script>document.getElementById('whats').addEventListener('click',function(){if(typeof fbq==='function')fbq('trackCustom','WhatsAppClick');if(typeof clarity==='function')clarity('event','whatsapp_click')});</script>
 <script>
 (function(){
@@ -137,7 +138,8 @@ var d=await r.json();if(d.url){location.href=d.url;return}if(d.error==='email_in
 b.disabled=false;b.textContent='Tentar de novo';alert('Não foi possível abrir o pagamento. Tente de novo em instantes.')});
 draw();
 var fx=$('fixo'),top=$('topo'),of=$('oferta'),pt=false,ov=false;
-function upd(){fx.classList.toggle('on',pt&&!ov)}
+var otv=false,otb=document.querySelector('.ofertatopo');function upd(){var o=pt&&!ov&&!otv;fx.classList.toggle('on',o);document.body.classList.toggle('fx-on',o)}
+if(otb)new IntersectionObserver(function(e){otv=e[0].isIntersecting;upd()}).observe(otb);
 new IntersectionObserver(function(e){pt=!e[0].isIntersecting;upd()}).observe(top);
 new IntersectionObserver(function(e){ov=e[0].isIntersecting;upd()}).observe(of);
 })();
